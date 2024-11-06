@@ -1,0 +1,24 @@
+<table class="table table-bordered table-striped text-wrap">
+    <thead>
+        <tr>
+            <th role="button" (click)="sortData('givenName')">
+                <!-- Firstname {{sortSign('givenName')}} -->
+                Firstname <span [innerHTML]="sortSign('givenName')"></span>
+            </th>
+            <th role="button" (click)="sortData('surname')">Lastname</th>
+            <th role="button" (click)="sortData('age')">Age</th>
+            <th role="button" (click)="sortData('email')">Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (row of manyPerson ; track row) {
+            <tr class="align-middle" (dblclick)="onPersonClick(row)">
+                <td>{{row.givenName}}</td>
+                <td>{{row.surname}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.age}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
